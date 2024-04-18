@@ -2,39 +2,769 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link
-      rel="shortcut icon"
-      href="https://th.bing.com/th/id/OIP.kwE8IapDUTtylieeRnn2YAHaHa?pid=ImgDet&rs=1"
-      type="image/x-icon"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Successful</title>
-  </head>
-  <body
-  >
+    <title>DashBoard</title>
     <style>
-      /* Apply glassmorphism effect to the container */
-      .container {
-        background: rgba(255, 255, 255, 0.823); /* Set a semi-transparent white background */
-        backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-        border-radius:15px; /* Rounded corners */
-        padding: 30px;
-        text-align: center;
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+    </style>
+    <link rel="stylesheet" href="Style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Raleway", sans-serif;
+        overflow: hidden;
       }
-
-      /* Center the container vertically and horizontally */
-      body {
+      .main-content {
+        background-color: rgb(41, 39, 39);
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+      }
+      .navbar {
+        display: flex;
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 20px;
+      }
+      .image {
+        width: 125px;
+        height: 50px;
+      }
+      .logoImg {
+        height: 50px;
+        border-radius: 10px;
+        margin-left: 5px;
+      }
+      .navigator {
+        height: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 500px;
+      }
+      .navigator a {
+        text-decoration: none;
+        color: aliceblue;
+        margin-left: 25px;
+        font-weight: 600;
+      }
+      .navigator a:hover {
+        color: #e00600;
+      }
+      .login {
+        width: 111vw;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .login a {
+        text-decoration: none;
+        color: #eae6fe;
+        padding: 10px 15px 10px 15px;
+        background-color: #e00600;
+        border-radius: 20px;
+        width: 80px;
+        font-weight: 600;
+      }
+      .txt-main {
+        color: aliceblue;
+        width: 50vw;
+      }
+      .info {
+        width: 50vw;
+        color: aliceblue;
+        margin-top: 30px;
+        border-left: 2px solid aliceblue;
+        height: 25vh;
+      }
+      .infohead {
+        display: flex;
+      }
+      .info img {
+        width: 75px;
+        height: 75px;
+        animation-name: example;
+        animation-duration: 7500s;
+        animation-iteration-count: infinite;
+        transition: linear;
+        margin-left: 20vw;
+        margin-top: -10px;
+      }
+      .txt-main h1 {
+        text-align: left;
+        margin-top: 30px;
+        width: 350px;
+        margin-left: 50px;
+        font-size: 40px;
+      }
+      .txt-main p {
+        width: 275px;
+        text-align: left;
+        margin-top: 15px;
+        font-size: large;
+        margin-left: 50px;
+      }
+      .halfcard {
+        margin-top: 2.5rem;
+        display: flex;
+        width: 100vw;
+        height: 40vh;
+      }
+      .info h3 {
+        margin-left: 35px;
+        margin-top: 30px;
+        margin-bottom: 12px;
+      }
+      .infocontent {
+        display: flex;
+      }
+      .para1 {
+        /* margin-top: 10px; */
+        margin-left: 35px;
+        /* width: 45vh; */
+      }
+      .para2 {
+        /* margin-top: 10px; */
+        margin-left: 35px;
+        margin-right: 10px;
+        /* width: 45vh; */
+      }
+      .card1 {
+        height: 250px;
+        width: 200px;
+        position: absolute;
+        bottom: 0;
+        left: 200px;
+        background-color: #f7f5dd;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Ensure full viewport height */
-        background-color: rgb(233, 233, 233);
+        flex-direction: column;
+      }
+      .card1 h1 {
+        color: rgb(41, 39, 39);
+        font-size: 50px;
+        margin-left: -55px;
+        margin-top: 0px;
+        font-family: "Poppins", sans-serif;
+      }
+      .card1 p {
+        color: rgb(41, 39, 39);
+        font-weight: 900;
+        margin-bottom: -60px;
+      }
+      .img1 {
+        position: relative;
+        left: 27px;
+      }
+      .img2 {
+        z-index: 2;
+      }
+      .im {
+        background-color: #f7f5dd;
+        display: flex;
+        width: 150px;
+        height: 55px;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+      }
+      .circle {
+        height: 32px;
+        display: flex;
+        font-family: "Poppins", sans-serif;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        position: relative;
+        left: -15px;
+        z-index: 1;
+        border-radius: 50%;
+        color: aliceblue;
+        background-color: rgb(41, 39, 39);
+      }
+      .card1 img {
+        height: 50px;
+        background-color: transparent;
+      }
+      .card1 .tiltarrow {
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(45deg);
+        font-size: 30px;
+        margin-right: 20px;
+        margin-top: 10px;
+        position: relative;
+        left: -15px;
+        z-index: 1;
+      }
+      .imgs {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 100px;
+      }
+      .card2 {
+        height: 200px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        bottom: 0;
+        left: 0;
+        width: 200px;
+        background-color: #e00600;
+      }
+      .card2 h1 {
+        color: rgb(41, 39, 39);
+        font-size: 50px;
+        margin-left: -55px;
+        margin-top: -50px;
+        font-family: "Poppins", sans-serif;
+      }
+      .card2 h3 {
+        color: rgb(41, 39, 39);
+        font-weight: 900;
+        margin-bottom: -60px;
+        margin-left: 27px;
+        font-size: 19px;
+      }
+      .pie {
+        --w: 100px;
+        height: 100px;
+        border: 5px solid #a38dfc;
+        background-color: #e00600;
+        width: var(--w);
+        aspect-ratio: 1;
+        position: relative;
+        display: inline-grid;
+        place-content: center;
+        margin-left: 55px;
+        border-radius: 50px;
+        margin-top: 15px;
+        font-size: 25px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-family: sans-serif;
+        font-family: "Poppins", sans-serif;
+      }
+      .pie:before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        inset: 0;
+        margin: 4px;
+        background: conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
+        -webkit-mask: radial-gradient(
+          farthest-side,
+          #0000 calc(99% - var(--b)),
+          #000 calc(100% - var(--b))
+        );
+        mask: radial-gradient(
+          farthest-side,
+          #0000 calc(99% - var(--b)),
+          #000 calc(100% - var(--b))
+        );
+        background: radial-gradient(farthest-side, var(--c) 98%, #0000)
+            top/var(--b) var(--b) no-repeat,
+          conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
+      }
+      .pie:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        inset: calc(50% - var(--b) / 2);
+        background: var(--c);
+        transform: rotate(calc(var(--p) * 3.6deg))
+          translateY(calc(50% - var(--w) / 2));
+      }
+      .leftcard {
+        position: absolute;
+        height: 335px;
+        width: 210px;
+        bottom: 50px;
+        right: 315px;
+        border-radius: 25px;
+        background-color: #e00600;
+        z-index: 2;
+      }
+      .card {
+        background-color: #e00600;
+        color: aliceblue;
+      }
+      .card h3 {
+        background-color: #e00600;
+        margin-top: 25px;
+        width: 150px;
+        margin-left: 30px;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+      }
+      .card p {
+        height: 100px;
+        width: 100px;
+        font-family: "Poppins", sans-serif;
+        border: 5px solid #a38dfc;
+        background-color: #e00600;
+        margin-left: 55px;
+        border-radius: 50px;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .card h1 {
+        background-color: #e00600;
+        margin-left: 25px;
+        font-size: 40px;
+        font-family: "Poppins", sans-serif;
+      }
+      .card h5 {
+        background-color: #e00600;
+        margin-left: 25px;
+        font-family: "Poppins", sans-serif;
+        margin-right: 5px;
+      }
+      .main-content {
+        height: 100vh;
+      }
+      .leftwhite {
+        height: 225px;
+        width: 550px;
+        background-color: aliceblue;
+        position: absolute;
+        bottom: -50px;
+        right: 25px;
+        z-index: 1;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+      }
+      .whcard {
+        background-color: aliceblue;
+      }
+      .whcard h1 {
+        background-color: aliceblue;
+        color: rgb(41, 39, 39);
+        margin-top: 25px;
+        margin-left: 300px;
+        font-family: "Poppins", sans-serif;
+      }
+      .whcard h3 {
+        background-color: aliceblue;
+        /* margin-top: 5px; */
+        margin-left: 300px;
+        color: rgb(41, 39, 39);
+      }
+      .element {
+        position: absolute;
+        bottom: 210px;
+        left: 360px;
+        z-index: 3;
+      }
+      .element img {
+        width: 75px;
+        height: 75px;
+        animation-name: example;
+        animation-duration: 7500s;
+        animation-iteration-count: infinite;
+        transition: linear;
+      }
+      .bgredcircle {
+        height: 225px;
+        width: 225px;
+        background-color: rgb(41, 39, 39);
+        position: absolute;
+        left: 375px;
+        top: 325px;
+        border-radius: 150px;
+        margin-left: 12.5px;
+        z-index: 2;
+      }
+      .rotateImg img {
+        height: 150px;
+        width: 150px;
+        animation-name: example;
+        animation-duration: 30000s;
+        animation-iteration-count: infinite;
+        transition: linear;
+      }
+      .rotateImg {
+        position: absolute;
+        left: 437.5px;
+        top: 266.5px;
+        border-radius: 150px;
+        margin-left: 12.5px;
+        z-index: 2;
+      }
+      .bgredstrip {
+        height: 300px;
+        z-index: 1;
+        width: 175px;
+        background: linear-gradient(to top, #6c20b984, #e0070000);
+        position: absolute;
+        left: 437.5px;
+        top: 125px;
+        border-bottom-left-radius: 500px;
+        border-bottom-right-radius: 500px;
+      }
+      @keyframes example {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360000deg);
+        }
+      }
+      @media (min-width: 170px) {
+        .leftcard {
+          bottom: 10px;
+          right: 15px;
+          display: none;
+        }
+        .info img {
+          display: none;
+        }
+        .info {
+          display: none;
+        }
+        .card1 {
+          height: 175px;
+          left: 0;
+          border-top-right-radius: 20px;
+        }
+        .element {
+          bottom: 50px;
+        }
+        .card2 {
+          height: 125px;
+          display: none;
+        }
+        .card2 h1 {
+          font-size: 30px;
+          margin-left: 25px;
+          margin-top: 20px;
+        }
+        .card2 h3 {
+          font-size: 12px;
+        }
+        .halfcard {
+          margin-top: -3rem;
+        }
+        .bgredstrip {
+          background: transparent;
+          display: none;
+        }
+        .rotateImg {
+          position: relative;
+          top: -50px;
+          left: 50vw;
+          margin-left: -25px;
+        }
+        .rotateImg img {
+          margin-top: 15px;
+          height: 100px;
+          width: 100px;
+        }
+        .leftwhite {
+          background: transparent;
+          display: none;
+        }
+        .whcard {
+          background: transparent;
+        }
+        .whcard h1 {
+          background-color: transparent;
+        }
+        .whcard h3 {
+          background-color: transparent;
+        }
+        .info {
+          font-size: 8px;
+        }
+        .txt-main h1 {
+          font-size: 18px;
+        }
+        .txt-main p {
+          font-size: small;
+          margin-left: -25px;
+          margin-top: 5px;
+        }
+        .txt-main {
+          width: 100vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .info {
+          font-size: 12px;
+        }
+        .txt-main h1 {
+          font-size: 25px;
+        }
+        .txt-main p {
+          font-size: medium;
+        }
+        .image {
+          width: 200px;
+        }
+        .element {
+          left: 240px;
+        }
+        .navigator a{
+          font-size: 10px;
+          margin-left: 16px;
+        }
+        .navigator{
+          width: 600px;
+        }
+      }
+      @media (min-width: 576px) {
+        .halfcard {
+          margin-top: 1rem;
+        }
+        .image {
+          width: 125px;
+        }
+        .rotateImg img {
+          height: 100px;
+          width: 100px;
+        }
+        .rotateImg {
+          margin-left: -50px;
+        }
+        .card1 {
+          left: 200px;
+          border-top-right-radius: 0px;
+        }
+        .element {
+          display: block;
+          left: 360px;
+          bottom: 135px;
+        }
+        .navigator a{
+          font-size: 15px;
+          margin-left: 25px;
+        }
+        .navigator{
+          width: 500px;
+        }
+        .card2 {
+          display: block;
+        }
+        .txt-main p {
+          margin-top: 15px;
+        }
+      }
+      @media (min-width: 768px) {
+        .leftcard {
+          display: block;
+        }
+        .info img {
+          display: block;
+        }
+        .txt-main {
+          width: 50vw;
+          display: block;
+        }
+        .txt-main p {
+          margin-left: 50px;
+        }
+        .info {
+          display: block;
+        }
+      }
+      @media (min-width: 992px) {
+        .leftcard {
+          bottom: 50px;
+          right: 315px;
+        }
+        .card2 {
+          height: 200px;
+        }
+        .card2 h1 {
+          font-size: 50px;
+          margin-left: 25px;
+          margin-top: 20px;
+        }
+        .card2 h3 {
+          font-size: 19px;
+        }
+        .card1 {
+          height: 250px;
+        }
+        .element {
+          bottom: 210px;
+        }
+        .bgredstrip {
+          width: 150px;
+          left: 375px;
+          display: block;
+          background: linear-gradient(to top, #6c20b984, #e0070000);
+        }
+        .leftwhite {
+          background: aliceblue;
+          display: block;
+        }
+        .whcard {
+          background: aliceblue;
+        }
+        .whcard h1 {
+          background-color: aliceblue;
+        }
+        .whcard h3 {
+          background-color: aliceblue;
+        }
+        .rotateImg img {
+          height: 125px;
+          width: 125px;
+        }
+        .rotateImg {
+          margin-left: 0;
+          left: 387.5px;
+          top: 282.5px;
+          position: absolute;
+        }
+        .txt-main {
+          width: 60vw;
+        }
+        .txt-main h1 {
+          font-size: 40px;
+        }
+        .txt-main p {
+          font-size: large;
+        }
+        .halfcard {
+          margin-top: 2.5rem;
+        }
+      }
+      @media (min-width: 1250px) {
+        .bgredstrip {
+          width: 175px;
+          left: 437.5px;
+        }
+        .info {
+          font-size: 20px;
+        }
+        .rotateImg img {
+          height: 150px;
+          width: 150px;
+        }
+        .rotateImg {
+          left: 450px;
+          top: 252.5px;
+        }
+        .txt-main {
+          width: 50vw;
+        }
+      }
+      @media (min-width: 1400px) {
       }
     </style>
-    <div class="container">
-      <h1>Registration Successful</h1>
-      <p>Thank you for registering.</p>
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="navbar">
+        <div class="image">
+          <img
+            class="logoImg"
+            src="./_7cd493e2-895f-4204-83fb-90a2a6723ba6.jpg"
+            alt="Logo"
+          />
+        </div>
+        <div class="navigator">
+          <a href="#">Home</a><a href="#">About</a><a href="#">Services</a>
+        </div>
+        <div class="login">
+          <a class="sign" href="#">Sign In</a>
+        </div>
+      </div>
+      <div class="halfcard">
+        <div class="txt-main">
+          <h1>Innovating Ideas for your Products and Business</h1>
+          <p>
+            Agency that build many amazing products to boost your Business to
+            next level.
+          </p>
+        </div>
+        <div class="info">
+          <div class="infohead">
+            <h3>Global Leaders</h3>
+            <img src="./Star.png" alt="Spiral" />
+          </div>
+          <div class="infocontent">
+            <div class="para1">
+              Agency that build many amazing Products to boost your business to
+              the next level.
+            </div>
+            <div class="para2">
+              We are officially partnering with some of the world's leading
+              companies in their respective industries.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="element">
+        <img src="./Star.png" alt="Spiral" />
+      </div>
+      <div class="card1">
+        <h1>55%</h1>
+        <p>Growth in Last Month</p>
+        <div class="imgs">
+          <div class="tiltarrow">
+            <img
+              src="./Blue and White Arrow Utilitarian Directional Business Floor Decal.png"
+              alt="Arrow"
+            />
+          </div>
+          <div class="im">
+            <img
+              class="img1"
+              src="./Black and Gold Elegant Facebook Profile Picture (1).png"
+              alt="Img1"
+            /><img
+              class="img2"
+              src="./Purple Abstract Circle Frame Facebook Profile Picture.png"
+              alt="Img2"
+            />
+            <div class="circle">+2</div>
+          </div>
+        </div>
+      </div>
+      <div class="card2">
+        <h1>28%</h1>
+        <h3>INVENTING THE FUTURE OF DESIGN</h3>
+      </div>
+      <div class="leftcard">
+        <div class="card">
+          <h3>First Round of Funding</h3>
+          <div class="pie animate" style="--p: 75; --b: 5px; --c: #f7f5dd">
+            75%
+          </div>
+          <h1>2.5K</h1>
+          <h5>263 Contributions in the last year</h5>
+        </div>
+      </div>
+      <div class="leftwhite">
+        <div class="whcard">
+          <h1>4.875</h1>
+          <h3>Project Likes Last Year</h3>
+        </div>
+      </div>
+      <!-- <div class="bgredcircle"></div> -->
+      <div class="bgredstrip"></div>
+      <div class="rotateImg">
+        <img src="./Black Circle Fashion Store Sticker.png" alt="Circle" />
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="sn_flex">
+      <div>
+        <!-- <Link to="/">
+            <h2 class="lg_head">VR Max</h2>
+          </Link> -->
+        <img
+          alt="gaming_img"
+          src="./pexels-anni-roenkae-2832441.jpg"
+          class="gameimg"
+        />
+      </div>
+      <div class="signin">
+        <p class="signin_head">Sign Up to VR Max</p>
+        <div class="snup">
+          <form method="post" action="/register">
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              class="signin_form"
+              placeholder="Name"
+            />
+            <input
+              type="text"
+              id="email"
+              name="email"
+              class="signin_form"
+              placeholder="Email"
+            />
+            <input
+              type="password"
+              id="pass"
+              name="pass"
+              placeholder="Password"
+              class="signin_form"
+            />
+            <!-- <div class="form_remfor">
+            <input type="radio" id="remember" name="fav_language" />
+            <label for="remember" class="remember_signin">
+              Remember Me
+            </label>
+            <p>Forgot Password?</p>
+          </div>  -->
+            <button type="button" class="signinbtn">Sign Up</button>
+          </form>
+          <!-- <p class="noacc_signin">
+            Have an account?{" "}
+            <Link to={"/signin"}>
+              <strong>Sign In Now</strong>
+            </Link> -->
+          <!-- </p> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
